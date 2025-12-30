@@ -1,13 +1,16 @@
-use crate::Route;
+// desktop::docs
+
+// TODO: link specific docs through router?
+// use crate::Route;
+
 use dioxus::prelude::*;
 
-const BLOG_CSS: Asset = asset!("/assets/blog.css");
-
 #[component]
-pub fn Blog(id: i32) -> Element {
+pub fn Docs() -> Element {
     rsx! {
-        document::Link { rel: "stylesheet", href: BLOG_CSS}
+        h1 { "Docs" }
 
+        /*
         div {
             id: "blog",
 
@@ -17,14 +20,15 @@ pub fn Blog(id: i32) -> Element {
 
             // Navigation links
             Link {
-                to: Route::Blog { id: id - 1 },
+                to: Route::Docs { id: id - 1 },
                 "Previous"
             }
             span { " <---> " }
             Link {
-                to: Route::Blog { id: id + 1 },
+                to: Route::Docs { id: id + 1 },
                 "Next"
             }
         }
+         */
     }
 }

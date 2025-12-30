@@ -2,14 +2,17 @@
 resolver = "2"
 members = [
     "packages/api",
+    #"packages/core",
     "packages/desktop",
     "packages/ui",
     "packages/web",
 ]
 
 [workspace.dependencies]
+color-eyre = "0.6.5"
 dioxus = { version = "0.7.1" }
 
 # workspace
-ui = { path = "packages/ui" }
 api = { path = "packages/api" }
+#core = { path = "packages/core" }
+ui = { path = "packages/ui" }

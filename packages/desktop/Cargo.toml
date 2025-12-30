@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+color-eyre = { workspace = true }
 dioxus = { workspace = true, features = ["router", "fullstack"] }
 ui = { workspace = true }
 
