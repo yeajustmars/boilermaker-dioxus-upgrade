@@ -1,11 +1,11 @@
 [workspace]
 resolver = "2"
 members = [
-    "packages/api",
+    "packages/boilermaker_api",
     "packages/boilermaker_core",
-    "packages/desktop",
-    "packages/ui",
-    "packages/web",
+    "packages/boilermaker_desktop",
+    "packages/boilermaker_ui",
+    "packages/boilermaker_web",
 ]
 
 [workspace.dependencies]
@@ -52,8 +52,7 @@ uuid = { version = "1.18.1", features = ["v4", "serde"] }
 walkdir = "2.5.0"
 
 # workspace
-api = { path = "packages/api" }
+boilermaker_api = { path = "packages/boilermaker_api" }
 boilermaker_core = { path = "packages/boilermaker_core" }
-core = { path = "packages/boilermaker_core" }
-desktop = { path = "packages/desktop" }
-ui = { path = "packages/ui" }
+boilermaker_desktop = { path = "packages/boilermaker_desktop" }
+boilermaker_ui = { path = "packages/boilermaker_ui" }

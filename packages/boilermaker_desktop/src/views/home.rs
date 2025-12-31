@@ -1,5 +1,6 @@
 use dioxus::prelude::*;
-use ui::Echo;
+
+use boilermaker_ui::Echo;
 
 #[component]
 pub fn Home() -> Element {

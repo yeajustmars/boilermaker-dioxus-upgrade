@@ -2,7 +2,7 @@
 
 use dioxus::prelude::*;
 
-use ui::{Navbar, DROPDOWN_LINK_STYLE, INDENTED_DROPDOWN_LINK_STYLE};
+use boilermaker_ui::{Navbar, DROPDOWN_LINK_STYLE, INDENTED_DROPDOWN_LINK_STYLE};
 use views::{Blog, Home};
 
 mod views;
