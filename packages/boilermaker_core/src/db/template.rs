@@ -93,6 +93,7 @@ impl TemplateMethods for LocalCache {
     async fn find_templates(&self, params: TemplateFindParams) -> Result<Vec<TemplateResult>> {
         let mut qb = QueryBuilder::new("SELECT * FROM template WHERE 1=1");
 
+        /*
         if let Some(ids) = params.ids
             && !ids.is_empty()
         {
@@ -103,27 +104,29 @@ impl TemplateMethods for LocalCache {
             }
             separated.push_unseparated(")");
         }
+         */
         if let Some(name) = params.name {
-            qb.push(" AND name = ?");
+            qb.push(" AND name = ");
             qb.push_bind(name);
         }
         if let Some(lang) = params.lang {
-            qb.push(" AND lang = ?");
+            qb.push(" AND lang = ");
             qb.push_bind(lang);
         }
         if let Some(repo) = params.repo {
-            qb.push(" AND repo = ?");
+            qb.push(" AND repo = ");
             qb.push_bind(repo);
         }
         if let Some(branch) = params.branch {
-            qb.push(" AND branch = ?");
+            qb.push(" AND branch = ");
             qb.push_bind(branch);
         }
         if let Some(subdir) = params.subdir {
-            qb.push(" AND subdir = ?");
+            qb.push(" AND subdir = ");
             qb.push_bind(subdir);
         }
         qb.push(" ORDER BY name ASC");
+
         let q = qb.build_query_as::<TemplateResult>();
         let results = q.fetch_all(&self.pool).await?;
 
