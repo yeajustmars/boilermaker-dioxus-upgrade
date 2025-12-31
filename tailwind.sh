@@ -7,6 +7,6 @@ cd $SCRIPT_DIR
 npm install tailwindcss @tailwindcss/cli
 
 npx @tailwindcss/cli \
-    -i ./packages/ui/tailwind.css \
-    -o ./packages/ui/assets/css/tailwind.css \
+    -i ./packages/boilermaker_ui/tailwind.css \
+    -o ./packages/boilermaker_ui/assets/css/tailwind.css \
     --watch

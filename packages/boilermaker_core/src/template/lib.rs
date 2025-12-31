@@ -2,6 +2,7 @@ use std::{collections::HashMap, env, fs, path::PathBuf};
 
 use color_eyre::{Result, eyre::eyre};
 use dirs;
+use fs_extra::{dir::CopyOptions, move_items};
 use git2::{FetchOptions, Repository, build::RepoBuilder};
 use minijinja;
 
@@ -152,7 +153,20 @@ pub async fn install_template(src_path: &PathBuf, dest_path: &PathBuf) -> Result
         return Err(eyre!("💥 Failed to create template directory: {e}"));
     }
 
-    if let Err(e) = fs::rename(src_path, dest_path) {
+    let options = CopyOptions::new();
+    let src = src_path
+        .clone()
+        .into_os_string()
+        .into_string()
+        .map_err(|e| eyre!("💥 Invalid source path: {:?}", e))?;
+    let src = vec![src];
+    let dest = dest_path
+        .clone()
+        .into_os_string()
+        .into_string()
+        .map_err(|e| eyre!("💥 Invalid destination path: {:?}", e))?;
+
+    if let Err(e) = move_items(&src, dest, &options) {
         return Err(eyre!(
             "💥 Failed to move project to template directory: {e}"
         ));

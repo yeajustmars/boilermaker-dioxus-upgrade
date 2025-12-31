@@ -2,6 +2,7 @@
 resolver = "2"
 members = [
     "packages/boilermaker_api",
+    "packages/boilermaker_cli",
     "packages/boilermaker_core",
     "packages/boilermaker_desktop",
     "packages/boilermaker_ui",
@@ -53,6 +54,7 @@ walkdir = "2.5.0"
 
 # workspace
 boilermaker_api = { path = "packages/boilermaker_api" }
+boilermaker_cli = { path = "packages/boilermaker_cli" }
 boilermaker_core = { path = "packages/boilermaker_core" }
 boilermaker_desktop = { path = "packages/boilermaker_desktop" }
 boilermaker_ui = { path = "packages/boilermaker_ui" }
