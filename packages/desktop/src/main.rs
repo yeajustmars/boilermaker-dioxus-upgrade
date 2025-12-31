@@ -1,9 +1,9 @@
 use color_eyre::eyre::Result;
 use dioxus::prelude::*;
 
+use desktop::{init_app_state, AppState};
 use ui::{Layout, Navbar, DROPDOWN_LINK_STYLE, INDENTED_DROPDOWN_LINK_STYLE};
 use views::{Docs, GetInvolved, Home, NewProject, TemplateAdd, Templates};
-
 mod views;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
@@ -25,7 +25,7 @@ enum Route {
 }
 
 fn main() -> Result<()> {
-    //init_app_state()?;
+    init_app_state()?;
     dioxus::launch(App);
     Ok(())
 }

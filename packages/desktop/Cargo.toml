@@ -4,8 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+boilermaker_core = { workspace = true }
 color-eyre = { workspace = true }
 dioxus = { workspace = true, features = ["router", "fullstack"] }
+once_cell = { workspace = true }
 ui = { workspace = true }
 
 [features]
