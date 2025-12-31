@@ -1129,6 +1129,8 @@ dependencies = [
  "color-eyre",
  "dioxus",
  "once_cell",
+ "tokio",
+ "tracing",
  "ui",
 ]
 

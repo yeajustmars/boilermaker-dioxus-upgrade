@@ -6,7 +6,7 @@ use sqlx::{
 
 use super::{SourceMethods, TemplateMethods};
 
-static MIGRATOR: Migrator = sqlx::migrate!("../migrations");
+static MIGRATOR: Migrator = sqlx::migrate!("../../migrations");
 
 #[async_trait::async_trait]
 pub trait TemplateDb: TemplateMethods + SourceMethods + Send + Sync {

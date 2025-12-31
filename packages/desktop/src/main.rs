@@ -1,7 +1,7 @@
 use color_eyre::eyre::Result;
 use dioxus::prelude::*;
 
-use desktop::{init_app_state, AppState};
+use desktop::{init_app_state, init_templates_context};
 use ui::{Layout, Navbar, DROPDOWN_LINK_STYLE, INDENTED_DROPDOWN_LINK_STYLE};
 use views::{Docs, GetInvolved, Home, NewProject, TemplateAdd, Templates};
 mod views;
@@ -32,7 +32,7 @@ fn main() -> Result<()> {
 
 #[component]
 fn App() -> Element {
-    //init_templates_context();
+    init_templates_context();
 
     rsx! {
         Router::<Route> {}
