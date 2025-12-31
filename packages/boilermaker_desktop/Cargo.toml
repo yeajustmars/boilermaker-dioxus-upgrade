@@ -8,6 +8,7 @@ boilermaker_core = { workspace = true }
 boilermaker_ui = { workspace = true }
 color-eyre = { workspace = true }
 dioxus = { workspace = true, features = ["router", "fullstack"] }
+git2 = { workspace = true }
 once_cell = { workspace = true }
 tokio = { workspace = true }
 tracing = { workspace = true }
